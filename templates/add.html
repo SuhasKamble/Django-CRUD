@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Add
+{% endblock title %}
+
+{% block body %}
+   <div class="container my-3">
+       <div class="col-md-6 m-auto">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    <h2 class="text-center">Add Info</h2>
+                </div>
+                <div class="card-body">
+                    <form action="add" method="post">
+                    {% csrf_token %}
+                        <label class="form-text" for="fname">First Name</label>
+                        <input class="form-control" type="text" name="fname" id="fname">
+                        <br>
+
+                        <label class="form-text" for="lname">Last Name</label>
+                        <input class="form-control" type="text" name="lname" id="lname">
+                        <br>
+
+                        <label class="form-text" for="email">Email</label>
+                        <input class="form-control" type="email" name="email" id="email">
+                        <br>
+
+                        <label class="form-text" for="phone">Phone</label>
+                        <input class="form-control" type="phone" name="phone" id="phone">
+                        <br>
+                        <button class="btn btn-primary w-100">Submit</button>
+                    </form>   
+                </div>
+            </div>
+       </div>
+   </div>
+{% endblock body %}
